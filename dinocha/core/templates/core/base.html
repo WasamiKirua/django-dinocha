@@ -12,7 +12,7 @@
         <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
     </head>
 
-<body class="bg-stone-900 flex flex-col min-h-screen">
+<body class="bg-zinc-200 flex flex-col min-h-screen">
 
     <!-- Navbar goes here -->
 	<nav class="bg-white shadow-lg">
@@ -27,7 +27,7 @@
 					</div>
 					<!-- Primary Navbar items -->
 					<div class="hidden md:flex items-center space-x-1">
-						<a href="" class="somtam-nav-links py-4 px-2 text-purple-500 hover:text-purple-700 transition duration-300 font-semibold">Shop</a>
+						<a href="{% url 'shop'%}" class="somtam-nav-links py-4 px-2 text-purple-500 hover:text-purple-700 transition duration-300 font-semibold">Shop</a>
 						<a href="" class="somtam-nav-links py-4 px-2 font-semibold">Contact</a>
 						<a href="" class="somtam-nav-links py-4 px-2 font-semibold">Log In</a>
 						<a href="" class="somtam-nav-links py-4 px-2 font-semibold">Sign Up</a>
@@ -70,7 +70,7 @@
 		<!-- mobile menu -->
 			<div class="hidden mobile-menu">
 				<ul class="">
-					<li><a href="#services" class="somtam-nav-links block text-sm px-2 py-4 text-purple-500 hover:text-purple-700 transition duration-300 font-semibold">Shop</a></li>
+					<li><a href="{% url 'shop' %}" class="somtam-nav-links block text-sm px-2 py-4 text-purple-500 hover:text-purple-700 transition duration-300 font-semibold">Shop</a></li>
 					<li><a href="#about" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">Contact</a></li>
 					<li><a href="#about" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">LogIn</a></li>
 					<li><a href="#contact" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">SignUp</a></li>
