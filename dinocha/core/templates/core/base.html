@@ -12,7 +12,7 @@
         <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
     </head>
 
-<body class="bg-stone-900">
+<body class="bg-stone-900 flex flex-col min-h-screen">
 
     <!-- Navbar goes here -->
 	<nav class="bg-white shadow-lg">
@@ -91,14 +91,13 @@
 	</nav>
     
 
-    <main>
+    <main class="flex-grow">
         {% block content %}
 
         {% endblock %}
     </main>
 
-	<!-- <footer class="bg-gray-100 absolute bottom-0 w-full"> -->
-	<!-- <footer class="bg-gray-100">
+	<footer class="bg-gray-100">
 		<div class="px-24 mt-8 border-t border-gray-100 sm:flex sm:items-center sm:justify-between lg:mt-5">
 			<nav>
 				<ul class="flex flex-wrap justify-center mb-5 gap-4 text-xs">
@@ -118,7 +117,7 @@
 			</ul>
 		  </div>
 		</div>
-	</footer> -->
+	</footer>
 
 </body>
 </html>
