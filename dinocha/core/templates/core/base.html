@@ -28,6 +28,7 @@
 					<!-- Primary Navbar items -->
 					<div class="hidden md:flex items-center space-x-1">
 						<a href="" class="somtam-nav-links py-4 px-2 text-purple-500 hover:text-purple-700 transition duration-300 font-semibold">Shop</a>
+						<a href="" class="somtam-nav-links py-4 px-2 font-semibold">Contact</a>
 						<a href="" class="somtam-nav-links py-4 px-2 font-semibold">Log In</a>
 						<a href="" class="somtam-nav-links py-4 px-2 font-semibold">Sign Up</a>
 					</div>
@@ -70,6 +71,7 @@
 			<div class="hidden mobile-menu">
 				<ul class="">
 					<li><a href="#services" class="somtam-nav-links block text-sm px-2 py-4 text-purple-500 hover:text-purple-700 transition duration-300 font-semibold">Shop</a></li>
+					<li><a href="#about" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">Contact</a></li>
 					<li><a href="#about" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">LogIn</a></li>
 					<li><a href="#contact" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">SignUp</a></li>
                     <li><a href="#contact" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">LogOut</a></li>
@@ -86,7 +88,7 @@
 					menu.classList.toggle("hidden");
 				});
 			</script>
-	</nav>    
+	</nav>
     
 
     <main>
@@ -94,6 +96,29 @@
 
         {% endblock %}
     </main>
+
+	<!-- <footer class="bg-gray-100 absolute bottom-0 w-full"> -->
+	<!-- <footer class="bg-gray-100">
+		<div class="px-24 mt-8 border-t border-gray-100 sm:flex sm:items-center sm:justify-between lg:mt-5">
+			<nav>
+				<ul class="flex flex-wrap justify-center mb-5 gap-4 text-xs">
+					<li>
+				  		<a href="#" class="somtam-nav-links text-sm transition hover:opacity-75 mr-3">About</a>
+						<a href="#" class="somtam-nav-links text-sm transition hover:opacity-75">Contact</a>
+					</li>
+			  	</ul>
+			</nav>
+	  
+			<ul class="flex justify-center gap-6 mb-5 mt-0 sm:lg:justify-end">
+				<li>
+			  		<a href="#">
+						<img src="{% static 'images/facebook.png' %}" class="w-6 h-6"/>
+					</a>
+				</li>
+			</ul>
+		  </div>
+		</div>
+	</footer> -->
 
 </body>
 </html>
