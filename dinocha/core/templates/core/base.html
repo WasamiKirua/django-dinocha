@@ -14,81 +14,27 @@
 
 <body class="bg-zinc-200 flex flex-col min-h-screen">
 
-    <!-- Navbar goes here -->
-	<nav class="bg-white shadow-lg">
-		<div class="max-w-6xl mx-auto px-4">
-			<div class="flex justify-between">
-				<div class="flex space-x-7">
-					<div>
-						<!-- Website Logo -->
-						<a href="/" class="flex items-center py-4 px-2">
-							<span class="somtam-nav-logo font-semibold text-purple-700 hover:text-purple-900 text-2xl">SomTam Coffee</span>
-						</a>
-					</div>
-					<!-- Primary Navbar items -->
-					<div class="hidden md:flex items-center space-x-1">
-						<a href="{% url 'shop'%}" class="somtam-nav-links py-4 px-2 text-purple-500 hover:text-purple-700 transition duration-300 font-semibold">Shop</a>
-						<a href="" class="somtam-nav-links py-4 px-2 font-semibold">Contact</a>
-						<a href="" class="somtam-nav-links py-4 px-2 font-semibold">Log In</a>
-						<a href="" class="somtam-nav-links py-4 px-2 font-semibold">Sign Up</a>
-					</div>
-				</div>
-					
-				<!-- Secondary Navbar items -->
-				<div class="hidden md:flex items-center space-x-3 ">
-					<a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>                      
-                    </a>
-					<a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                        </svg>
-                    </a>
-				</div>
-					
-				<!-- Mobile menu button -->
-				<div class="md:hidden flex items-center">
-					<button class="outline-none mobile-menu-button">
-						<svg class=" w-6 h-6 text-gray-500 hover:text-purple-700"
-							x-show="!showMenu"
-							fill="none"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-						<path d="M4 6h16M4 12h16M4 18h16"></path>
-						</svg>
-					</button>
-				</div>
-			</div>
-		</div>
-		
-		<!-- mobile menu -->
-			<div class="hidden mobile-menu">
-				<ul class="">
-					<li><a href="{% url 'shop' %}" class="somtam-nav-links block text-sm px-2 py-4 text-purple-500 hover:text-purple-700 transition duration-300 font-semibold">Shop</a></li>
-					<li><a href="#about" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">Contact</a></li>
-					<li><a href="#about" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">LogIn</a></li>
-					<li><a href="#contact" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">SignUp</a></li>
-                    <li><a href="#contact" class="somtam-nav-links block text-sm px-2 py-4 font-semibold">LogOut</a></li>
-					<li><a href="#" class="block px-2 py-4"><img src="{% static 'images/user.png' %}" class="w-6 h-6"></a></li>
-					<li><a href="#" class="block px-2 py-4"><img src="{% static 'images/shopping-cart.png' %}" class="w-6 h-6"></a></li>
-				</ul>
-			</div>
-			
-			<script>
-				const btn = document.querySelector("button.mobile-menu-button");
-				const menu = document.querySelector(".mobile-menu");
+    <nav class="border-b border-gray-300">
+        <div class="max-w-6xl mx-auto py-2 px-6 xl:px-0 flex items-center justify-between">
+            <div class="menu-left flex items-center space-x-6">
+                <a href="/" class="py-4 text-lg text-purple-700 font-semibold">SomTam</a>
 
-				btn.addEventListener("click", () => {
-					menu.classList.toggle("hidden");
-				});
-			</script>
-	</nav>
+                <ul class="flex items-center space-x-4">
+                    <li><a class="somtam-nav-links hover:text-purple-700 transition duration-300 text-md" href="{% url 'shop' %}">Shop</a></li>
+                </ul>
+            </div>
+
+            <div class="menu-right flex items-center space-x-4">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>                      
+                </a>
+
+                {% include 'cart/menu_cart.html' %}
+            </div>
+        </div>
+    </nav>
     
 
     <main class="flex-grow">
@@ -118,6 +64,8 @@
 		  </div>
 		</div>
 	</footer>
+
+	<script src="https://unpkg.com/htmx.org@1.7.0"></script>
 
 </body>
 </html>
