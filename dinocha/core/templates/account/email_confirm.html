@@ -3,21 +3,22 @@
 {% load i18n %}
 {% load account %}
 
-{% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
-
 
 {% block content %}
-<h1>{% trans "Confirm E-mail Address" %}</h1>
+{% load static %}
+<div class="max-w-lg mx-auto flex flex-wrap p-6">
+<div class="w-full bg-gray-100 p-6 rounded-xl">
+    <h1 class="mb-6 text-2xl">Confirm your E-mail</h1>
 
 {% if confirmation %}
 
 {% user_display confirmation.email_address.user as user_display %}
 
-<p>{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}</p>
+<p>{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a class="" href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}</p>
 
-<form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+<form class="pt-3" method="post" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
-    <button type="submit">{% trans 'Confirm' %}</button>
+    <button class="py-4 px-6 rounded-xl text-white bg-purple-500 hove:bg-purple-700" type="submit">{% trans 'Confirm' %}</button>
 </form>
 
 {% else %}
@@ -28,4 +29,6 @@
 
 {% endif %}
 
+</div>
+</div>
 {% endblock %}

@@ -22,6 +22,11 @@
                 <ul class="flex items-center space-x-4">
                     <li><a class="somtam-nav-links hover:text-purple-700 transition duration-300 text-md" href="{% url 'shop' %}">Shop</a></li>
                 </ul>
+                {% if user.is_authenticated %}
+                <ul class="flex items-center space-x-4">
+                    <li><a class="somtam-nav-links hover:text-purple-700 transition duration-300 text-md" href="{% url 'account_logout' %}">Logout</a></li>
+                </ul>
+                {% endif %}
             </div>
 
             <div class="menu-right flex items-center space-x-4">

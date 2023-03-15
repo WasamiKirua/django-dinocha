@@ -31,6 +31,50 @@
     <button class="py-4 px-6 rounded-xl text-white bg-purple-500 hover:bg-purple-700 w-full" type="submit">{% trans "Sign In" %}</button>
   </div>
 
+  {% if form.errors %}
+      {% for field in form %}
+          {% for error in field.errors %}
+          <div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
+            <span class="text-xl inline-block mr-5 align-middle">
+              <i class="fas fa-bell"></i>
+            </span>
+            <span class="inline-block align-middle mr-8">
+              <b class="capitalize">Error!</b> {{ error|escape }}
+            </span>
+            <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" onclick="closeAlert(event)">
+              <span>×</span>
+          
+            </button>
+          </div>
+      {% endfor %}
+  {% endfor %}
+
+  {% for error in form.non_field_errors %}
+  <div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
+    <span class="text-xl inline-block mr-5 align-middle">
+      <i class="fas fa-bell"></i>
+    </span>
+    <span class="inline-block align-middle mr-8">
+      <b class="capitalize">Error!</b> {{ error|escape }}
+    </span>
+    <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" onclick="closeAlert(event)">
+      <span>×</span>
+  
+    </button>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  <script>
+    function closeAlert(event){
+      let element = event.target;
+      while(element.nodeName !== "BUTTON"){
+        element = element.parentNode;
+      }
+      element.parentNode.parentNode.removeChild(element.parentNode);
+    }
+  </script>
+
   <div class="pt-3">
   <a href="{% provider_login_url "facebook" method="js_sdk" %}">
     <button type="button" class=" w-full rounded-xl text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium text-sm px-6 py-4 text-center items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2">
