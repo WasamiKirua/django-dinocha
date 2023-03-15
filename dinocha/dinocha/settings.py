@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
-    #ssl
+    #django-sslserver
     'sslserver',
 
 ]

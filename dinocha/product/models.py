@@ -22,7 +22,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
-    thumbnail = models.ImageField(upload_to='uploadd', blank=True, null=True)
+    thumbnail = models.ImageField(upload_to='upload', blank=True, null=True)
 
     class Meta:
         ordering = ('created_at', )
@@ -40,7 +40,7 @@ class Product(models.Model):
 
                 return self.thumbnail.url
             else:
-                return 'https://via.placeholder.com/240x240x.jpg'
+                return 'https://via.placeholder.com/240x240.jpg'
 
     def make_thumbnail(self, image, size=(300, 300)):
         img = Image.open(image)
