@@ -1,0 +1,6 @@
+facebook-1:
+    - completed all custom allauth pages
+    - cart.html
+    - checkout.html
+    - login
+    - logout
