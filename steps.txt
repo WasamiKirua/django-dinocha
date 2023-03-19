@@ -4,3 +4,11 @@ facebook-1:
     - checkout.html
     - login
     - logout
+
+facebook-2:
+    - show total cost in cart and checkout
+    - show data in cart like item price, quantity and name
+    - only allow checkout for authenticated user
+    - only allow shop for authenticated user
+    - show user information in the checkout
+    - change checkout link in the cart

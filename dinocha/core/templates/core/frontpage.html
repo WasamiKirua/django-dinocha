@@ -11,7 +11,8 @@
             Start your day right with our crafted products, <br>
             made to perfection and served with a smile.
         </p>
-  
+        
+        {% if user.is_authenticated %}
         <div class="mt-8 flex flex-wrap justify-center sm:text-xl sm:leading-relaxedgap-4">
             <a class="block w-full 
                 rounded-xl 
@@ -26,8 +27,26 @@
                 focus:ring 
                 active:bg-red-500 
                 sm:w-auto"
-                href="/get-started">Start Shopping</a>
+                href="{% url 'shop' %}">Start Shopping</a>
         </div>
+        {% else %}
+        <div class="mt-8 flex flex-wrap justify-center sm:text-xl sm:leading-relaxedgap-4">
+            <a class="block w-full 
+                rounded-xl 
+                bg-purple-500 
+                px-12 py-3 
+                text-sm 
+                font-medium 
+                text-white 
+                shadow 
+                hover:bg-purple-700 
+                focus:outline-none 
+                focus:ring 
+                active:bg-red-500 
+                sm:w-auto"
+                href="{% url 'account_login' %}">Start Shopping</a>
+        </div>
+        {% endif %}
     </div>
 </div>
 

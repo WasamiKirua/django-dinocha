@@ -19,11 +19,11 @@
         <div class="max-w-6xl mx-auto py-2 px-6 xl:px-0 flex items-center justify-between">
             <div class="menu-left flex items-center space-x-6">
                 <a href="{% url 'frontpage' %}" class="py-4 text-lg text-purple-700 font-semibold">SomTam</a>
-
+                
+                {% if user.is_authenticated %}
                 <ul class="flex items-center space-x-4">
                     <li><a class="somtam-nav-links hover:text-purple-700 transition duration-300 text-md" href="{% url 'shop' %}">Shop</a></li>
                 </ul>
-                {% if user.is_authenticated %}
                 <ul class="flex items-center space-x-4">
                     <li><a class="somtam-nav-links hover:text-purple-700 transition duration-300 text-md" href="{% url 'account_logout' %}">Logout</a></li>
                 </ul>
