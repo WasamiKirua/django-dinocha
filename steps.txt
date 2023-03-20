@@ -18,3 +18,10 @@ facebook-3:
     - added link to myaccount page in base.html
     - added myaccount and edit_myaccount views
     - added myaccount and edit_myaccount path in core/urls.py 
+
+facebook-4:
+    - added cart_item function to cart.py
+    - splitted cart.hmlt in cart/templates/cart/partials/cart_item.hml and cart_total.html
+    - added update_cart, hx_menu_cart and hx_cart_total views
+    - added update_cart, hx_menu_cart and hx_cart_total paths in urls.py
+    - added htmx wrapper for menu cart in base.html
