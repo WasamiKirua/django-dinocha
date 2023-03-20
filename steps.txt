@@ -12,3 +12,9 @@ facebook-2:
     - only allow shop for authenticated user
     - show user information in the checkout
     - change checkout link in the cart
+
+facebook-3:
+    - added my_account.html and edit_myaccount.html pages in core/templates/core
+    - added link to myaccount page in base.html
+    - added myaccount and edit_myaccount views
+    - added myaccount and edit_myaccount path in core/urls.py 
