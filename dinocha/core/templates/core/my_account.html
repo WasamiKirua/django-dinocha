@@ -17,20 +17,22 @@
 
     <h2 class="my-6 text-xl">My Orders</h2>
 
+    {% for order in request.user.orders.all %}
     <div class="w-full mb-6 p-6 flex flex-wrap bg-gray-100 rounded-xl">
         <div class="mb-6 flex justify-between">
-            <a href="#">Order id: 1</a>
+            <a href="#">Order id: {{ order.id }}</a>
         </div>
 
+        {% for item in order.items.all %}
         <div class="mb-6 w-full">
             <div class="product mb-6 flex pr-6">
                 <a href="#" class="w-1/4">
-                    <img class="hover:shadow-lg rounded-xl" src="1.jpg">
+                    <img class="hover:shadow-lg rounded-xl" src="{{ item.product.get_thumbnail }}">
                 </a>
 
                 <div class="w-3/4 pl-6">
                     <div class="flex justify-between">
-                        <a href="#" class="text-lg">Product Name</a>
+                        <a href="#" class="text-lg">{{ item.product.name }}</a>
 
                         <p class="mb-6 pt-1 text-gray-400">$9.99</p>
                     </div>
@@ -38,16 +40,19 @@
                     <hr>
 
                     <div class="mt-6">
-                        Quantity: 1
+                        Quantity: {{ item.quantity }}
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
 
         <div>
-            <p class="text-lg">Date: 04.04.2021</p>
+            <p class="text-lg">Date: {{ order.created_at }}</p>
             <p class="text-lg">Total: $9.99</p>
         </div>
     </div>
+    {% endfor %}
+
 </div>
 {% endblock %}

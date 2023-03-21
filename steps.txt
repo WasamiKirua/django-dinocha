@@ -25,3 +25,12 @@ facebook-4:
     - added update_cart, hx_menu_cart and hx_cart_total views
     - added update_cart, hx_menu_cart and hx_cart_total paths in urls.py
     - added htmx wrapper for menu cart in base.html
+
+facebook-5:
+    - changed checkout.html to have a form into it
+    - changed myaccount.html 
+    - created order app
+    - order models.py
+    - order urls.py path
+    - order views.py
+    - changed dinocha/urls.py to include order/urls.py
