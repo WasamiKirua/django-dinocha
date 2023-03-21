@@ -43,5 +43,14 @@ facebook-6
     - added to settings.py the above VARS
     - installed stripe via pip
     - changed order/views.py to process a stripe order
-    
+
+facebook-7:
+    - added clear() function to cart/cart.py
+    - show error in checkout
+    - change ordering for orders ordering in order/model.py
+    - added success.html page
+    - show correct prices in the order page
+    - Redesign the start_order order/views.py and stripe integration is now working
+    - Changed design of product/templates/product.html
+
 

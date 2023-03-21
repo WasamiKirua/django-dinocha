@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from .cart import Cart
 from product.models import Product
@@ -34,6 +35,7 @@ def update_cart(request, product_id, action):
             "total_price": (quantity * product.price),
             "quantity": quantity,
         }
+        print(item)
     else:
         item = None
 
@@ -51,7 +53,11 @@ def hx_cart_total(request):
 def cart(request):
     return render(request, 'cart/cart.html')
 
+def success(request):
+    return render(request, 'cart/success.html')
+
 @login_required
 def checkout(request):
-    return render(request, 'cart/checkout.html')
+    pub_key = settings.STRIPE_API_KEY_PUBLISHABLE
+    return render(request, 'cart/checkout.html', {'pub_key': pub_key})
 
