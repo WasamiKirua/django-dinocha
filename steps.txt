@@ -34,3 +34,14 @@ facebook-5:
     - order urls.py path
     - order views.py
     - changed dinocha/urls.py to include order/urls.py
+
+facebook-6
+    - fix item count to 0 in cart.py and update_cart() in cart/views.py and cart_item.html {% if item %}
+    - changed checkout.html to trigger stripe
+    - changed core/templates/base.html to accept scripts block
+    - added to .env STRIPE_API_KEY_PUBLISHABLE and STRIPE_API_KEY_HIDDEN
+    - added to settings.py the above VARS
+    - installed stripe via pip
+    - changed order/views.py to process a stripe order
+    
+
