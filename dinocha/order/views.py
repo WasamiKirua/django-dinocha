@@ -30,7 +30,7 @@ def start_order(request):
 
         stripe.api_key = settings.STRIPE_API_KEY_HIDDEN
         session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
+            payment_method_types=['card', 'promptpay'],
             line_items = items,
             mode = 'payment',
             success_url = 'https://127.0.0.1:8000/cart/success',
