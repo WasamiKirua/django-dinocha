@@ -31,7 +31,7 @@ class Product(models.Model):
         return self.name
     
     def get_display_price(self):
-        return self.price
+        return self.price / 100
 
     def get_thumbnail(self):
         if self.thumbnail:
