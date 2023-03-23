@@ -12,3 +12,15 @@ def product(request, slug):
 
     
     return render(request, 'product/product.html', context)
+
+
+def product_detail(request, id):
+    
+    
+    product = Product.objects.get(id=id)
+    
+    context = {
+        'product': product
+    }
+    
+    return render(request, 'product/product_detail.html', context)

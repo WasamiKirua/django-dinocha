@@ -1,11 +1,30 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.core import mail
+from django.contrib import messages
 from product.models import Category, Product
 from django.conf import settings
 import os
 
 def frontpage(request):
     return render(request, 'core/frontpage.html')
+
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email_from = request.POST.get('email')
+        message = request.POST.get('message')
+
+        if name != '' and email_from != '' and message != '':
+
+            with mail.get_connection() as connection:
+                mail.EmailMessage(f"Contact Request: {name} {email_from}", message, email_from, ['gireiyu21@gmail.com'], connection=connection,).send()
+                messages.success(request, "Message Sent!")
+
+        else:
+            messages.error(request, "Error!")
+            
+    return render(request, 'core/contact.html')
 
 @login_required
 def myaccount(request):

@@ -16,14 +16,14 @@
         <h3 class="shop-text mt-6 mb-3 text-purple-800 font-bold text-xl">Categories</h3>
     </div>
 
-    {% for category in categories %}
-    <div class="mt-5 grid md:grid-cols-3 gap-x-6 lg:gap-x-12 hover:text-purple-500">
+{% for category in categories %}
+    <div class="mt-5 grid md:grid-cols-3 gap-x-6 lg:gap-x-12 text-purple-500">
         <div class="mb-6 lg:mb-0">
           <div class="bg-white block rounded-lg shadow-lg">
             <div class="relative overflow-hidden bg-no-repeat bg-cover">
               <img src="{% if category.name == 'Coffee' %}{% static 'images/category-coffee.jpg' %}{% else %}{% static 'images/category-coffee-two.jpg' %}{% endif %}" class="w-full rounded-t-lg" />
               <a href="{% url 'product' category.slug %}">
-                <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed hover:text-purple-500"></div>
+                <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed text-purple-500"></div>
               </a>
               <svg class="absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
                 style="left: 0; bottom: 0">
@@ -38,8 +38,7 @@
           </div>
         </div>
     </div>
-    {% endfor %}
-
+{% endfor %}
 
 </div>
 

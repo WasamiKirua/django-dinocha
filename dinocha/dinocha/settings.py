@@ -60,7 +60,7 @@ INSTALLED_APPS = [
 ]
 
 #SITE_ID = 2
-SITE_ID = 6
+SITE_ID = 5
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,7 +121,7 @@ ACCOUNT_SIGNUP_PASSWORD_VERIFICATION = True
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 
-#Email Settings
+# Email Settings
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
